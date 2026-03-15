@@ -72,22 +72,19 @@ export const SEED_ATHLETES: Athlete[] = [
     disciplines: ['800m'],
     homeNation: 'ENG', active: true,
   },
-  // Wheeler twins – please verify correct first names / Po10 IDs
   {
-    id: 'wheeler-twin-1',
-    name: 'Wheeler Twin 1',
+    id: 'charlie-wheeler',
+    name: 'Charlie Wheeler',
     nationality: 'GB', gender: 'M',
     disciplines: ['800m'],
     homeNation: 'ENG', active: true,
-    notes: 'Please update name via Athletes tab',
   },
   {
-    id: 'wheeler-twin-2',
-    name: 'Wheeler Twin 2',
+    id: 'george-wheeler',
+    name: 'George Wheeler',
     nationality: 'GB', gender: 'M',
     disciplines: ['800m'],
     homeNation: 'ENG', active: true,
-    notes: 'Please update name via Athletes tab',
   },
 
   // ─── BRITISH MEN: 1500m / Mile ───────────────────────────────────────────
