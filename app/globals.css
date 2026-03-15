@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --cream: #F5F0E6;
+  --cream-dark: #EDE6D6;
+}
+
+body {
+  background-color: var(--cream);
+  color: #1a1a1a;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c4b89a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a89c7e; }
+
+/* Smooth transitions */
+* { transition-property: background-color, border-color, box-shadow, opacity;
+    transition-duration: 150ms; transition-timing-function: ease; }
+
+/* HOKA-style multicolor stripe */
+.hoka-stripe {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #D92B2B 0%,
+    #E8634A 12%,
+    #F47C20 22%,
+    #D4A017 33%,
+    #5A9E3A 44%,
+    #2E8B7A 55%,
+    #00889E 66%,
+    #2B5FD9 77%,
+    #4B3FCF 88%,
+    #8B2FC9 100%
+  );
+}
+
+/* Calendar cell hover */
+.cal-day:hover { background-color: #EDE6D6; }
+.cal-day.has-race { cursor: pointer; }
+
+/* Tab active indicator */
+.tab-active { border-bottom: 2px solid #2B5FD9; color: #2B5FD9; font-weight: 600; }
+.tab-inactive { border-bottom: 2px solid transparent; color: #666; }
+.tab-inactive:hover { color: #333; border-bottom-color: #c4b89a; }
