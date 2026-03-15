@@ -19,7 +19,8 @@ function parseRSS(xml: string, source: NewsItem['source']): NewsItem[] {
   const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_' });
   const feed = parser.parse(xml);
   const channel = feed?.rss?.channel ?? feed?.feed;
-  const rawItems: Record<string, unknown>[] = Array.isArray(channel?.item)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const rawItems: Record<string, any>[] = Array.isArray(channel?.item)
     ? channel.item
     : channel?.item
     ? [channel.item]
@@ -49,7 +50,7 @@ function parseRSS(xml: string, source: NewsItem['source']): NewsItem[] {
       source,
       publishedAt: isoDate,
       imageUrl,
-    } satisfies NewsItem;
+    } as NewsItem;
   }).filter(n => n.title.length > 3);
 }
 
