@@ -27,7 +27,7 @@ export default function AthletesView({ athletes, onUpdate }: Props) {
   const [addNat, setAddNat] = useState<'GB' | 'international'>('GB');
   const [addDisc, setAddDisc] = useState<string>('800m');
   const [addGender, setAddGender] = useState<'M' | 'F'>('M');
-  const [editingId, setEditingId] = useState<string | null>(null);
+
 
   const filtered = useMemo(() => {
     return athletes.filter(a => {

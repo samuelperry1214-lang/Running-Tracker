@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { RaceResult, ResultEntry } from '@/lib/types';
+import { RaceResult } from '@/lib/types';
 
 interface Props {
   loading: boolean;
