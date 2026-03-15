@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { scrapePo10RecentMeetings, scrapePo10MeetingResults } from '@/lib/scrapers';
+import { RaceResult } from '@/lib/types';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -22,7 +23,7 @@ export async function GET(req: Request) {
       top.map(m => scrapePo10MeetingResults(m.id).then(results => ({ meeting: m, results })))
     );
 
-    const groups: { meeting: { name: string; id: string; date: string }; results: ReturnType<typeof scrapePo10MeetingResults> extends Promise<infer T> ? T : never }[] = [];
+    const groups: { meeting: { name: string; id: string; date: string }; results: RaceResult[] }[] = [];
     for (const s of settled) {
       if (s.status === 'fulfilled') groups.push(s.value);
     }

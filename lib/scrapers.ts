@@ -8,7 +8,7 @@ async function fetchText(url: string, timeoutMs = 12000): Promise<string> {
   const res = await fetch(url, {
     headers: { 'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' },
     signal: AbortSignal.timeout(timeoutMs),
-    next: { revalidate: 0 },
+    cache: 'no-store',
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.text();

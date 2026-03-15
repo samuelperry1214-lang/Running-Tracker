@@ -5,8 +5,7 @@ import CalendarView from '@/components/CalendarView';
 import ResultsView from '@/components/ResultsView';
 import NewsView from '@/components/NewsView';
 import AthletesView from '@/components/AthletesView';
-import { Race, NewsItem, Athlete } from '@/lib/types';
-import { RaceResult } from '@/lib/types';
+import { Race, NewsItem, Athlete, RaceResult } from '@/lib/types';
 import { SEED_ATHLETES } from '@/lib/athletes-seed';
 
 type Tab = 'calendar' | 'results' | 'news' | 'athletes';
